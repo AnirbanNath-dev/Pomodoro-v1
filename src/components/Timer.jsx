@@ -1,5 +1,5 @@
 import React, { useContext , useEffect } from 'react'
-import PomoContext from '../contexts/pomoContext'
+import PomoContext from '../contexts/PomoContext'
 
 function Timer() {
 
