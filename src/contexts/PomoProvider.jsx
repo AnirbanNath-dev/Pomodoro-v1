@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import PomoContext from './pomoContext'
+import PomoContext from './PomoContext'
 
 function PomoProvider({children}) {
 
