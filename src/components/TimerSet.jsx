@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import PomoContext from '../contexts/pomoContext'
+import PomoContext from '../contexts/PomoContext'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -18,10 +18,12 @@ function TimerSet() {
     if(String(hr).split('').every((elem)=> elem === '0')){
 
        setHour(0)
+       setHr(0)
 
     }
     else{
       setHour(hr)
+      setHr(hr)
     }
 
    
@@ -29,11 +31,12 @@ function TimerSet() {
     if((String(mint).split('').every((elem)=> elem === '0'))){
 
       setMinute(0)
-  
+      setMint(0)
 
     }else{
       setMinute(() => {
         if (mint / 60 == 0) {
+          setMint(mint)
           return mint
         } else {
   
@@ -41,10 +44,13 @@ function TimerSet() {
           let remainder = mint % 60
           setHour(Number(hr) + Math.floor(quotient))
           setHr(Number(hr) + Math.floor(quotient))
+          setMint(remainder)
           return remainder
   
         }
       })
+
+      
   
     }
 
