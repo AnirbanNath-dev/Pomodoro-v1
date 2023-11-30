@@ -8,7 +8,7 @@ import { useContext} from 'react';
 import Timer from './components/Timer';
 import TimerSet from './components/TimerSet';
 
-import PomoContext from './contexts/pomoContext';
+import PomoContext from './contexts/PomoContext';
 
 
 function App() {
