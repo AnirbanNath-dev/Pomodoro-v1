@@ -43,12 +43,12 @@ function Timer() {
   return (
     <>
       <div className="flex gap-12 text-5xl items-center text-white">
-      <span className='overflow-hidden p-2 h-22 w-24 text-center border-gray-800 shadow-sm shadow-gray-800 bg-gray-900 border-2 rounded-lg opacity-90'>{hour}</span>
+      <span className='overflow-hidden p-2 h-22 w-24 text-center border-gray-800 shadow-sm shadow-gray-800 bg-gray-900 border-2 rounded-lg opacity-90'>{hour<10 ? "0"+hour : hour}</span>
           :
-          <span className='overflow-hidden p-2 h-22 h-22 w-24 text-center border-gray-800 shadow-sm shadow-gray-800 bg-gray-900 border-2 rounded-lg opacity-90'>{minute}</span>
+          <span className='overflow-hidden p-2 h-22 h-22 w-24 text-center border-gray-800 shadow-sm shadow-gray-800 bg-gray-900 border-2 rounded-lg opacity-90'>{minute<10 ? "0"+minute : minute}</span>
           :
-          <span className='overflow-hidden p-2 h-22 h-22 w-24 text-center border-gray-800 shadow-sm shadow-gray-800 bg-gray-900 border-2 rounded-lg opacity-90'>{second}</span>
-              </div>
+          <span className='overflow-hidden p-2 h-22 h-22 w-24 text-center border-gray-800 shadow-sm shadow-gray-800 bg-gray-900 border-2 rounded-lg opacity-90'>{second<10 ? "0"+second : second}</span>
+        </div>
 
     </>
   )
