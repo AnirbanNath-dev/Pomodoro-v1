@@ -6,7 +6,7 @@ import WorkSession from './components/WorkSession';
 import ShortBreak from './components/ShortBreak';
 import LongBreak from './components/LongBreak';
 import PomoContext from './contexts/PomoContext';
-
+import { motion } from 'framer-motion';
 
 
 function App() {
@@ -38,10 +38,10 @@ function App() {
           isFullScreen ? <FullscreenExitIcon className='absolute text-black bottom-4 right-4 text-2xl scale-125 hover:scale-150 cursor-pointer' onClick={fullScreen}></FullscreenExitIcon> : <FullscreenIcon className='absolute text-black bottom-4 right-4 text-2xl scale-125 hover:scale-150 cursor-pointer' onClick={fullScreen}></FullscreenIcon>
         }
         <div className='w-[85%] mx-auto h-[100%] p-20 font-LondonBetween flex flex-col items-center gap-14'>
-          <h1 className='text-6xl tracking-wider '>Pomodoro Timer</h1>
+          <motion.h1 className='text-6xl tracking-wider ' animate={{opacity:1}} initial={{opacity:0}} transition={{duration: 1}}>Pomodoro Timer</motion.h1>
           <div className='flex items-center flex-col gap-2'>
 
-            <div className='flex gap-4 text-lg '>
+            <motion.div className='flex gap-4 text-lg ' animate={{opacity:1}} initial={{opacity:0}} transition={{duration: 1}}>
 
               <span className='text-slate-400 p-2 border-gray-800 shadow-sm shadow-gray-800 bg-gray-900 border-2 rounded-3xl text-center cursor-pointer' onClick={()=> {
                 setToggle(false)
@@ -58,7 +58,7 @@ function App() {
                 setPomoScreen('long-break')
                 }}>Long Break🍙</span>
 
-            </div>
+            </motion.div>
 
             {
 
