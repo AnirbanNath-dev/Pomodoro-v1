@@ -4,7 +4,7 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import PauseIcon from '@mui/icons-material/Pause';
 
 import { useContext } from 'react';
-
+import { motion } from 'framer-motion';
 import Timer from './Timer';
 import TimerSet from './TimerSet';
 import PomoContext from '../contexts/PomoContext';
@@ -28,7 +28,7 @@ function WorkSession() {
 
 
     return (
-        <>
+        <motion.div animate={{x:0}} initial={{x:-300}} transition={{stiffness:300, type: "spring"}}>
             <div className='bg-[rgba(0,0,0,0.4)] w-fit p-12 rounded-xl flex flex-col items-center gap-10'>
 
                 <div className='flex gap-10 text-6xl items-center'>
@@ -57,7 +57,7 @@ function WorkSession() {
 
                 </div>
             </div>
-        </>
+        </motion.div>
     )
 }
 

@@ -1,15 +1,19 @@
 
 import FullscreenIcon from '@mui/icons-material/Fullscreen';
 import FullscreenExitIcon from '@mui/icons-material/FullscreenExit';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import WorkSession from './components/WorkSession';
 import ShortBreak from './components/ShortBreak';
 import LongBreak from './components/LongBreak';
+import PomoContext from './contexts/PomoContext';
+
 
 
 function App() {
   const [pomoScreen, setPomoScreen] = useState('work-session')
   const [isFullScreen, setFullScreen] = useState(false)
+  const {setToggle} = useContext(PomoContext)
+
   const fullScreen = () => {
     setFullScreen(prev => !prev)
 
@@ -39,9 +43,20 @@ function App() {
 
             <div className='flex gap-4 text-lg '>
 
-              <span className='text-slate-400 p-2 border-gray-800 shadow-sm shadow-gray-800 bg-gray-900 border-2 rounded-3xl text-center cursor-pointer' onClick={()=> setPomoScreen('work-session')}>Work Session🎯</span>
-              <span className='text-slate-400 p-2 border-gray-800 shadow-sm shadow-gray-800 bg-gray-900 border-2 rounded-3xl text-center cursor-pointer' onClick={()=> setPomoScreen('short-break')}>Short Break🍙</span>
-              <span className='text-slate-400 p-2 border-gray-800 shadow-sm shadow-gray-800 bg-gray-900 border-2 rounded-3xl text-center cursor-pointer' onClick={()=> setPomoScreen('long-break')}>Long Break🍙</span>
+              <span className='text-slate-400 p-2 border-gray-800 shadow-sm shadow-gray-800 bg-gray-900 border-2 rounded-3xl text-center cursor-pointer' onClick={()=> {
+                setToggle(false)
+                setPomoScreen('work-session')
+                }}>Work Session🎯</span>
+
+              <span className='text-slate-400 p-2 border-gray-800 shadow-sm shadow-gray-800 bg-gray-900 border-2 rounded-3xl text-center cursor-pointer' onClick={()=> {
+                setToggle(false)
+                setPomoScreen('short-break')
+                }}>Short Break🍙</span>
+
+              <span className='text-slate-400 p-2 border-gray-800 shadow-sm shadow-gray-800 bg-gray-900 border-2 rounded-3xl text-center cursor-pointer' onClick={()=> {
+                setToggle(false)
+                setPomoScreen('long-break')
+                }}>Long Break🍙</span>
 
             </div>
 
