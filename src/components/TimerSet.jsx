@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function TimerSet() {
 
-
+  
   const { setHour, setMinute, setTimer ,  hr , setHr , mint , setMint} = useContext(PomoContext)
   
   

@@ -2,9 +2,9 @@ import EditIcon from '@mui/icons-material/Edit';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import PauseIcon from '@mui/icons-material/Pause';
-
-
-import { useContext} from 'react';
+import FullscreenIcon from '@mui/icons-material/Fullscreen';
+import FullscreenExitIcon from '@mui/icons-material/FullscreenExit';
+import { useContext, useState} from 'react';
 import Timer from './components/Timer';
 import TimerSet from './components/TimerSet';
 
@@ -13,7 +13,7 @@ import PomoContext from './contexts/PomoContext';
 
 function App() {
 
-
+  const [isFullScreen , setFullScreen] = useState(false)
 
   const { setHour , setMinute , timer, setTimer, toggle, setToggle , hr , mint , setSecond} = useContext(PomoContext)
   
@@ -27,14 +27,30 @@ function App() {
 
   }
   
+  const fullScreen = ()=>{
+    setFullScreen(prev => !prev)
+    
 
+      if (document.fullscreenElement) {
+        
+        document.exitFullscreen();
+      } else {
+        
+        document.documentElement.requestFullscreen();
+      }
+    
+
+
+  }
 
 
   return (
     <>
-
+      
       <div className='w-screen h-screen bg-[url(../../bg.png)] bg-cover bg-center text-white overflow-x-hidden'>
-
+      {
+        isFullScreen ? <FullscreenExitIcon className='absolute text-black bottom-4 right-4 text-2xl scale-125 hover:scale-150 cursor-pointer' onClick={fullScreen}></FullscreenExitIcon> : <FullscreenIcon className='absolute text-black bottom-4 right-4 text-2xl scale-125 hover:scale-150 cursor-pointer' onClick={fullScreen}></FullscreenIcon> 
+      }
         <div className='w-[85%] mx-auto h-[100%] p-20 font-LondonBetween flex flex-col items-center gap-14'>
           <h1 className='text-6xl tracking-wider '>Pomodoro Timer</h1>
 
@@ -68,8 +84,9 @@ function App() {
           </div>
 
         </div>
-
+        
       </div>
+     
     </>
   )
 }
