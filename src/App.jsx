@@ -57,8 +57,9 @@ function App() {
 
             <div className='flex gap-4 text-lg '>
 
-              <span className='p-2 border-gray-800 shadow-sm shadow-gray-800 bg-gray-900 border-2 rounded-3xl text-center cursor-pointer'>Work Time🎯</span>
-              <span className='p-2 border-gray-800 shadow-sm shadow-gray-800 bg-gray-900 border-2 rounded-3xl text-center cursor-pointer'>Break Time🍙</span>
+              <span className='text-slate-400 p-2 border-gray-800 shadow-sm shadow-gray-800 bg-gray-900 border-2 rounded-3xl text-center cursor-pointer'>Work Session🎯</span>
+              <span className='text-slate-400 p-2 border-gray-800 shadow-sm shadow-gray-800 bg-gray-900 border-2 rounded-3xl text-center cursor-pointer'>Short Break🍙</span>
+              <span className='text-slate-400 p-2 border-gray-800 shadow-sm shadow-gray-800 bg-gray-900 border-2 rounded-3xl text-center cursor-pointer'>Long Break🍙</span>
 
             </div>
 
@@ -70,7 +71,7 @@ function App() {
                   timer ? <TimerSet></TimerSet> : null
 
                 }
-                
+
 
                 <Timer></Timer>
 
