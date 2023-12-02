@@ -7,7 +7,7 @@ function LongBreak() {
       <div className='bg-[rgba(0,0,0,0.4)] w-fit p-12 rounded-xl flex flex-col items-center gap-10'>
 
         
-
+        Will be updated soon
 
 
       </div>
