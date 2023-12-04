@@ -15,21 +15,31 @@ function App() {
   const {setToggle} = useContext(PomoContext)
 
   const fullScreen = () => {
-    setFullScreen(prev => !prev)
-
-
-    if (document.fullscreenElement) {
-
-      document.exitFullscreen();
-    } else {
-
-      document.documentElement.requestFullscreen();
+    setFullScreen(prev => !prev);
+  
+    const handleFullScreenChange = () => {
+      if (!document.fullscreenElement) {
+        // Exit full screen
+        setFullScreen(false);
+      }
+    };
+  
+    if (document.fullscreenEnabled) {
+      document.addEventListener('fullscreenchange', handleFullScreenChange);
+  
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+      } else {
+        document.exitFullscreen();
+      }
     }
-
-
-
-  }
-
+  
+    // Cleanup event listener when the component unmounts
+    return () => {
+      document.removeEventListener('fullscreenchange', handleFullScreenChange);
+    };
+  };
+  
   return (
     <>
 
