@@ -39,7 +39,7 @@ function App() {
         }
         <div className='w-[85%] mx-auto h-[100%] p-20 font-LondonBetween flex flex-col items-center gap-14'>
           <motion.h1 className='text-6xl tracking-widest font-CoffeeHealing' animate={{opacity:1}} initial={{opacity:0}} transition={{duration: 1}}>Pomodoro Timer</motion.h1>
-          <div className='flex items-center flex-col gap-2'>
+          <div className='flex items-center flex-col gap-10'>
 
             <motion.div className='flex gap-4 text-lg ' animate={{opacity:1}} initial={{opacity:0}} transition={{duration: 1}}>
 
