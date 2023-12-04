@@ -28,7 +28,7 @@ function WorkSession() {
 
 
     return (
-        <motion.div animate={{x:0}} initial={{x:-300}} transition={{stiffness:300, type: "spring"}}>
+        <motion.div animate={{y:0 , opacity: 1}} initial={{y:-70 , opacity:0}} transition={{stiffness:300, type: "spring"}}>
             <div className='bg-[rgba(0,0,0,0.4)] w-fit p-12 rounded-xl flex flex-col items-center gap-10'>
 
                 <div className='flex gap-10 text-6xl items-center'>

@@ -6,3 +6,8 @@
   font-family: LondonBetween;
   src: url('../src/assets/LondonBetween.ttf');
 }
+
+@font-face {
+  font-family: CoffeeHealing;
+  src: url('../src/assets/CoffeeHealing-1GrKe.ttf');
+}

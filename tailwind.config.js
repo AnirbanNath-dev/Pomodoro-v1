@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily : {
-        LondonBetween : 'LondonBetween'
+        LondonBetween : 'LondonBetween',
+        CoffeeHealing : 'CoffeeHealing'
       }
     },
   },
