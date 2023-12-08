@@ -43,7 +43,7 @@ function App() {
   return (
     <>
 
-      <div className='w-screen h-screen bg-[url(../../bg.png)] bg-cover bg-center text-white overflow-x-hidden'>
+      <div className='w-screen h-screen bg-[url(../../bg.webp)] bg-cover bg-center text-white overflow-x-hidden'>
         {
           isFullScreen ? <FullscreenExitIcon className='absolute text-black bottom-4 right-4 text-2xl scale-125 hover:scale-150 cursor-pointer' onClick={fullScreen}></FullscreenExitIcon> : <FullscreenIcon className='absolute text-black bottom-4 right-4 text-2xl scale-125 hover:scale-150 cursor-pointer' onClick={fullScreen}></FullscreenIcon>
         }
